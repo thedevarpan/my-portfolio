@@ -4,3 +4,6 @@ from django.http import HttpResponse
 
 def Index(request):
     return render(request, 'arpan/index.html')
+
+def ProjectDetails(request):
+    return render(request, 'arpan/project-details.html')
