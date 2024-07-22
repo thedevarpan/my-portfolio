@@ -315,7 +315,7 @@
                                     <div class="item-img o-hidden">
                                         <a href="project-details1.html">
                                             <div class="inner wow">
-                                                <img src="{% static 'assets/imgs/home-page/6.jpg' %}" alt="image">
+                                                <img src="{% static 'assets/imgs/home-page/wordpress-portfolio.png' %}" alt="image">
                                             </div>
                                         </a>
                                     </div>
@@ -712,57 +712,37 @@
                                 </div>
                             </div>
                         </div>
+
                         <div class="row wow fadeIn" data-wow-delay=".4s">
+                            
+                            <!-- Blog card of home page -->
+                             {% for all_post in all_posts %}
                             <div class="col-lg-6">
                                 <div class="item md-mb80">
                                     <div class="row rest">
                                         <div class="col-md-6">
                                             <div class="img">
-                                                <img src="{% static 'assets/imgs/blog/h1.jpg' %}" alt="">
+                                                <img src="{{all_post.blog_cover.url}}" alt="">
                                             </div>
                                         </div>
                                         <div class="col-md-6 valign">
                                             <div class="cont">
-                                                <span class="date fz-12 ls1 text-u opacity-7 mb-15">August 6,
-                                                    2022</span>
+                                                <span class="date fz-12 ls1 text-u opacity-7 mb-15">{{all_post.updated_at}}</span>
                                                 <h5>
-                                                    <a href="blog-details.html">Free advertising for your online
-                                                        business.</a>
+                                                    <a href="blog-details/{{all_post.slug}}">{{all_post.blog_title}}</a>
                                                 </h5>
                                                 <div class="tags colorbg mt-15">
-                                                    <a href="blog-half-img.html">Marketing</a>
-                                                    <a href="blog-half-img.html">Design</a>
+                                                    {% for all_tag in all_tags %}
+                                                    <a href="blog-half-img.html">{{all_tag.name}}</a>
+                                                    {% endfor %}
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-6">
-                                <div class="item">
-                                    <div class="row rest">
-                                        <div class="col-md-6">
-                                            <div class="img">
-                                                <img src="{% static 'assets/imgs/blog/h4.jpg' %}" alt="">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 valign">
-                                            <div class="cont">
-                                                <span class="date fz-12 ls1 text-u opacity-7 mb-15">August 6,
-                                                    2022</span>
-                                                <h5>
-                                                    <a href="blog-details.html">Business meeting 2023 in San
-                                                        Francisco.</a>
-                                                </h5>
-                                                <div class="tags colorbg mt-15">
-                                                    <a href="blog-half-img.html">Marketing</a>
-                                                    <a href="blog-half-img.html">Design</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            {% endfor %}
+                             <!-- Blog card of home page -->
                         </div>
                     </div>
                 </section>
