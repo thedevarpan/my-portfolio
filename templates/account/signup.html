@@ -1,0 +1,66 @@
+{% include "components/navbar.html" %}
+{% load static %}
+
+
+
+
+<div class="comments-from section-padding sub-bg">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-11">
+                <div class="text mb-60">
+                    <h3>User Registration</h3>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-11">
+                <form method="post" action="{% url "Signup" %}">
+                    {% csrf_token %}
+ 
+   
+                    <div class="controls row">
+                        <div class="col-lg-6">
+                            <div class="form-group mb-30">
+                                <input id="form_name" type="text" name="username" placeholder="Username" required="required">
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <div class="form-group mb-30">
+                                <input id="form_email" type="email" name="email" placeholder="Email" required="required">
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <div class="form-group mb-30">
+                                <input id="form_email" type="password" name="password" placeholder="password" required="required">
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <div class="form-group mb-30">
+                                <input id="form_email" type="password" name="confirm_password" placeholder="Confirm Password" required="required">
+                            </div>
+                        </div>
+
+                        
+
+                        <div class="col-12 text-center mt-20">
+                            <button type="submit" class="butn-circle">
+                                <span class="full-width">
+                                    <span class="full-width">Sign Up</span>
+                                </span>
+                                <img src="{% static 'assets/imgs/svg-assets/circle-star.svg' %}" alt="" class="circle-star">
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+    {% include "components/footer.html" %}
+
+    <!-- ==================== End Footer ==================== -->

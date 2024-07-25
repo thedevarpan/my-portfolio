@@ -28,6 +28,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
         rel="stylesheet">
 
+        <script src="https://kit.fontawesome.com/8c8480497a.js" crossorigin="anonymous"></script>
+
     <!-- Plugins -->
     <link rel="stylesheet" href="{% static 'assets/css/plugins.css' %}">
 
@@ -63,7 +65,7 @@
     <!-- ==================== End Loading ==================== -->
 
 
-    <div class="cursor"></div>
+    {% comment %} <div class="cursor"></div> {% endcomment %}
 
 
     <!-- ==================== Start progress-scroll-button ==================== -->
@@ -82,7 +84,7 @@
 
         <!-- ==================== Start Navbar ==================== -->
 
-        <nav class="navbar navbar-expand-lg bord">
+        {% comment %} <nav class="navbar navbar-expand-lg bord">
             <div class="container">
 
                 <!-- Logo -->
@@ -171,7 +173,10 @@
                     </div>
                 </div>
             </div>
-        </nav>
+        </nav> {% endcomment %}
+
+        {% include "components/navbar.html" %}
+
 
         <!-- ==================== End Navbar ==================== -->
 
@@ -233,6 +238,7 @@
     <script src="{% static 'assets/js/smoother-script.js' %}"></script>
 
     <!-- custom scripts -->
+    <script src="{% static 'assets/js/comments-reply.js' %}"></script>
     <script src="{% static 'assets/js/scripts.js' %}"></script>
 
 </body>

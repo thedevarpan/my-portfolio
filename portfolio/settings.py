@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'arpan.apps.ArpanConfig',
     'myblog.apps.MyblogConfig',
+    'account.apps.AccountConfig',
 ]
 
 MIDDLEWARE = [

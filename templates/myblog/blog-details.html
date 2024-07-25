@@ -119,6 +119,19 @@
                                 </div>
                             </div>
                         </div>
+
+                        <div class="ml-auto">
+                            <div class="share-icon flex">
+                                <div class="valign">
+                                    <span>Feedback:</span>
+                                </div>
+                                <div>
+                                    <a href=""><i class="fa-regular fa-thumbs-up"></i></a>
+                                    <a href=""><i class="fa-regular fa-thumbs-down"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="ml-auto">
                             <div class="share-icon flex">
                                 <div class="valign">
@@ -131,6 +144,7 @@
                                 </div>
                             </div>
                         </div>
+
                     </div>
                     <div class="author-area mt-50">
                         <div class="flex">
@@ -248,8 +262,8 @@
                                     </div>
                                     <div class="col-lg-3 d-flex align-items-center">
                                         <div class="replay-post ml-auto">
-                                            <a href="#0">
-                                                <span>Replay</span>
+                                            <a href="#0" class="reply-button">
+                                                <span>Reply</span>
                                             </a>
                                         </div>
                                     </div>
@@ -274,17 +288,48 @@
                                     </div>
                                     <div class="col-lg-3 d-flex align-items-center">
                                         <div class="replay-post ml-auto">
-                                            <a href="#0">
-                                                <span>Replay</span>
+                                            <a href="#0" class="reply-button">
+                                                <span>Reply</span>
                                             </a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+
+                                       <!-- Hidden reply form template -->
+                                       <div id="reply-form-template" class="d-none">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="form-group mb-30">
+                                                    <textarea id="reply_message" name="message" placeholder="Your Reply" rows="3" required="required"></textarea>
+                                                </div>
+
+                                                <div class="col-lg-3 d-flex align-items-center">
+                                                    <div class="replay-post ml-auto">
+                                                        <a href="#0" class="reply-button">
+                                                            <span>Submit Reply</span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="col-12">
+                                                    <div class="form-group mb-30">
+                                                        <textarea id="form_message" name="message" placeholder="Message" rows="4" required="required"></textarea>
+                                                    </div>
+                                                </div>
+
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                <!-- /Hidden reply form template -->
                         </div>
                     </div>
                 </div>
             </div>
+
 
             <div class="comments-from section-padding sub-bg">
                 <div class="container">
@@ -299,6 +344,7 @@
                         <div class="col-lg-11">
                             <form method="post" action="{% url 'AddComment' %}">
                                 {% csrf_token %}
+                                <input type="hidden" name="post_slug" value="{{ blog.slug }}">
 
                                 <div class="messages"></div>
                                 <div class="controls row">
